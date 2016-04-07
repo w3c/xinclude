@@ -1,6 +1,8 @@
-= README
+= XInclude 1.0 Repository
 
-This repository contains the W3C XInclude specification by the XML Core WG.
-The `xinclude10` branch contains a copy of the _XInclude 1.0_ specification; the
-`xinclude11` branch contains the working copy of the _XInclude 1.1_ specification.
-The `testsuite11` branch contains the test suite for _XInclude 1.1_
+This branch exists as an historical artifact. It contains a snapshot of
+the sources used to produce the
+_XML Inclusions (XInclude) Version 1.0 (Second Edition)_ specification.
+
+No further work is anticipated here.
+
