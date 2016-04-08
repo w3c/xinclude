@@ -1,0 +1,161 @@
+defaultTasks 'allspec'
+
+buildscript {
+  repositories {
+    mavenCentral()
+    maven { url "http://maven.restlet.org" }
+  }
+
+  dependencies {
+    classpath group: 'org.docbook', name: 'docbook-xslt2', version: '2.0.18'
+    classpath group: 'com.xmlcalabash', name: 'xmlcalabash1-print', version: '1.1.4'
+    classpath group: 'com.xmlcalabash', name: 'xmlcalabash1-gradle', version: '1.1.2'
+  }
+}
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+apply plugin: 'org.docbook.task'
+apply plugin: 'com.xmlcalabash.task'
+
+import org.docbook.DocBookTask
+import com.xmlcalabash.XMLCalabashTask
+
+task attcopy1(type: XMLCalabashTask) {
+  inputs.file "style/attcopy.xpl"
+  inputs.file "example/src.xml"
+  inputs.file "example/attcopy-1.xml"
+  outputs.file "build/attcopy-1.xml"
+
+  input("source", "example/attcopy-1.xml")
+  output("result", "build/attcopy-1.xml")
+  pipeline "style/attcopy.xpl"
+
+  doFirst {
+    mkdir("build")
+  }
+}
+
+task attcopy2(type: XMLCalabashTask) {
+  inputs.file "style/attcopy.xpl"
+  inputs.file "example/src-2.xml"
+  inputs.file "example/attcopy-2.xml"
+  outputs.file "build/attcopy-2.xml"
+
+  input("source", "example/attcopy-2.xml")
+  output("result", "build/attcopy-2.xml")
+  pipeline "style/attcopy.xpl"
+
+  doFirst {
+    mkdir("build")
+  }
+}
+
+task rfc51471(type: XMLCalabashTask) {
+  inputs.file "style/xinclude.xpl"
+  inputs.file "example/code.pl"
+  inputs.file "example/rfc5147-1.xml"
+  outputs.file "build/rfc5147-1.xml"
+
+  input("source", "example/rfc5147-1.xml")
+  output("result", "build/rfc5147-1.xml")
+  pipeline "style/xinclude.xpl"
+
+  doFirst {
+    mkdir("build")
+  }
+}
+
+task rfc51472(type: XMLCalabashTask) {
+  inputs.file "style/xinclude.xpl"
+  inputs.file "example/code.pl"
+  inputs.file "example/rfc5147-2.xml"
+  outputs.file "build/rfc5147-2.xml"
+
+  input("source", "example/rfc5147-2.xml")
+  output("result", "build/rfc5147-2.xml")
+  pipeline "style/xinclude.xpl"
+
+  doFirst {
+    mkdir("build")
+  }
+}
+
+task examples(dependsOn: ['attcopy1', 'attcopy2', 'rfc51471', 'rfc51472']) {
+  // nothing to see here
+}
+
+
+//x-diff11.html: Overview.html
+//	sed "s/<pre>/<pre xml:space='preserve'>/g" < xinclude-11-cr-1.html > ,diffA.html
+//	cp Overview.html ,Overview.html
+//	tidy ,Overview.html
+//	tail -n +3 ,Overview.html | sed "s/<pre>/<pre xml:space='preserve'>/g" > ,diffB.html
+//	java -jar /usr/local/DeltaXMLCore-7_0_1_j/command.jar compare xhtml ,diffA.html ,diffB.html $@
+//	rm -f ,diffA.html ,diffB.html ,Overview.html
+
+task diff11(type: XMLCalabashTask) {
+  inputs.file "style/xmlspec.xsl"
+  inputs.file "style/diffspec.xsl"
+  inputs.file "style/basespec.xsl"
+  inputs.file "src/xinclude-11.xml"
+  outputs.file "build/diff11.html"
+
+  input("source", "src/xinclude-11.xml")
+  output("result", "build/diff11.html")
+  param("show.diff.markup", "1")
+  pipeline "style/makespec.xpl"
+
+  doFirst {
+    mkdir("build")
+  }
+}
+
+task spec(dependsOn: ['examples', 'diff11'], type: XMLCalabashTask) {
+  inputs.file "style/xmlspec.xsl"
+  inputs.file "style/diffspec.xsl"
+  inputs.file "style/basespec.xsl"
+  inputs.file "src/xinclude-11.xml"
+  outputs.file "build/index.html"
+
+  input("source", "src/xinclude-11.xml")
+  output("result", "build/index.html")
+  param("show.diff.markup", "0")
+  pipeline "style/makespec.xpl"
+
+  doFirst {
+    mkdir("build")
+  }
+}
+
+task diff10(dependsOn: ['spec'], type: Exec) {
+  inputs.file "bin/deltadiff.sh"
+  inputs.file "snapshots/xinclude-10.html"
+  inputs.file "build/index.html"
+  outputs.file "build/diff10.html"
+
+  commandLine "/bin/sh", "bin/deltadiff.sh", "snapshots/xinclude-10.html",
+              "build/index.html", "build/diff10.html"
+}
+
+task diffcr(dependsOn: ['spec'], type: Exec) {
+  inputs.file "bin/deltadiff.sh"
+  inputs.file "snapshots/xinclude-11-cr-2.html"
+  inputs.file "build/index.html"
+  outputs.file "build/diffcr.html"
+
+  commandLine "/bin/sh", "bin/deltadiff.sh", "snapshots/xinclude-11-cr-2.html",
+              "build/index.html", "build/diffcr.html"
+}
+
+task allspec(dependsOn: ['spec', 'diff10', 'diffcr']) {
+  // nothing to see here
+}
+
+task clean
+task clean.doFirst {
+  delete "build"
+}
