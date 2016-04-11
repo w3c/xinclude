@@ -88,15 +88,6 @@ task examples(dependsOn: ['attcopy1', 'attcopy2', 'rfc51471', 'rfc51472']) {
   // nothing to see here
 }
 
-
-//x-diff11.html: Overview.html
-//	sed "s/<pre>/<pre xml:space='preserve'>/g" < xinclude-11-cr-1.html > ,diffA.html
-//	cp Overview.html ,Overview.html
-//	tidy ,Overview.html
-//	tail -n +3 ,Overview.html | sed "s/<pre>/<pre xml:space='preserve'>/g" > ,diffB.html
-//	java -jar /usr/local/DeltaXMLCore-7_0_1_j/command.jar compare xhtml ,diffA.html ,diffB.html $@
-//	rm -f ,diffA.html ,diffB.html ,Overview.html
-
 task diff11(type: XMLCalabashTask) {
   inputs.file "style/xmlspec.xsl"
   inputs.file "style/diffspec.xsl"
@@ -152,6 +143,10 @@ task diffcr(dependsOn: ['spec'], type: Exec) {
 }
 
 task allspec(dependsOn: ['spec', 'diff10', 'diffcr']) {
+  // nothing to see here
+}
+
+task dist(dependsOn: allspec) {
   // nothing to see here
 }
 
