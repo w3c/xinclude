@@ -1,4 +1,5 @@
 language: java
+install: /bin/true
 script: gradle dist
 sudu: false
 env:
