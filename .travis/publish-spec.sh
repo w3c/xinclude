@@ -18,7 +18,7 @@ if [ "$TRAVIS_REPO_SLUG" == "$GIT_PUB_REPO" ]; then
         cd gh-pages
         git rm -rf ./xinclude/${TRAVIS_BRANCH}/${TIP}
         mkdir -p ./xinclude/${TRAVIS_BRANCH}/${TIP}
-        cp -Rf $HOME/xinclude/* ./xinclud/${TRAVIS_BRANCH}/${TIP}
+        cp -Rf $HOME/xinclude/* ./xinclude/${TRAVIS_BRANCH}/${TIP}
 
         make
 
