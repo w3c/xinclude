@@ -148,6 +148,10 @@ task dist(dependsOn: allspec) {
   // nothing to see here
 }
 
+task assemble(dependsOn: allspec) {
+  // Travis, you wanna run assemble. Fine.
+}
+
 task clean
 task clean.doFirst {
   delete "build"
