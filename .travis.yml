@@ -2,7 +2,7 @@ language: java
 install: .travis/get-delta.sh
 script: gradle dist
 after_script: .travis/rm-delta.sh
-sudu: required
+sudo: required
 env:
   global:
   - secure: rSzqL18oQdd2TXnwXUOs8w3c+0OLoGLSe2lTD8o7GJSYaQlD9nMCiZ0VdXl/aSRwZs7emj86N77sqtU9xp4FNu+ZmUDvRD9c362BwZXUCQ/PrpMTV+P5y1cmZe7NSFHET0XEXRVwBa/f8rnLy1HShAQX41wG62H/9EIo9puBLEihMi/57AeWfkvXAb4nlbK1OO9xaxqJJdGTb+auwwI92Daz/j/1eYyALVDQPXGqz+Vpa7km1xJBGJoE5zIYhcQp4HIwg4lx1P91dW8JU64KohjAG+bFYI8qgAERddpOxMAdc8YNKQ/UPXx/FXjZG03eE/cf7HGOIK7xiRG5ygCLNG/FZxHd/ak1kpK3KKWr5+BnyklXi7ZeX3Q56nu4/9ueoghFl+MoiuQQCP5Ju6YNyuWB59K0hIJELrOnbaWtHgqgShaZCwwo1y9hOQFFnIYuSLmcave9E9frNjbGTwJx/CZYF1WOhTssyQgrH00A0RvUYP+JbqQiyzlxBYy8t9P8As7eoV/yiTvjf9oosScJCRn1wDR8AIPAr3nVP+liHedLD81hyQnPDie40aL7QfYNaZAf0d3Q8O/qjyRGtzaW4wKS/LvzmNi6wApIhyEWdFLAEQA0x8fg8ELHDMXqHdpSMpnlpgaW3kPgfAjIEu4yb8GmpCdsQazwpc6ZhAYNg5U=
