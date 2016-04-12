@@ -1,5 +1,3 @@
-defaultTasks 'allspec'
-
 buildscript {
   repositories {
     mavenCentral()
