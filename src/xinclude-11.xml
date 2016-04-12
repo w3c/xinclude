@@ -3,15 +3,15 @@
 <!--Arbortext, Inc., 1988-2008, v.4002-->
 <!DOCTYPE spec PUBLIC "-//W3C//DTD Specification V2.10//EN"
  "xmlspec.dtd" [
-<!ENTITY year "2015">
-<!ENTITY month "June">
-<!ENTITY MM "06">
-<!ENTITY day "30">
-<!ENTITY DD "30">
+<!ENTITY year "2016">
+<!ENTITY month "April">
+<!ENTITY MM "04">
+<!ENTITY day "12">
+<!ENTITY DD "12">
 <!ENTITY MMDD "&MM;&DD;">
-<!ENTITY status "CR">
-<!ENTITY status-lc "cr">
-<!ENTITY status-words "Candidate Recommendation">
+<!ENTITY status "WD">
+<!ENTITY status-lc "wd">
+<!ENTITY status-words "Working Draft">
 <!ENTITY includensuri "http://www.w3.org/2001/XInclude">
 <!ENTITY attrnsuri "http://www.w3.org/2001/XInclude/local-attributes">
 <!ENTITY XMLCore-IPR "http://www.w3.org/2002/08/xmlcore-IPR-statements">
@@ -1068,28 +1068,68 @@ the resource doesn't exist, connection difficulties or security
 restrictions prevent it from being fetched, the URI scheme isn't
 a fetchable one, or the resource is in an unsupported encoding) result in a
 <termref def="dt-resource-error">resource error</termref>.</p>
-<p>The encoding of such a resource is determined by:</p>
+<p>The encoding of such a resource is determined as follows
+(terminology as defined in sections 2.2 and 2.3 of
+<bibref ref="RFC7303"/>):</p>
+
 <ulist>
 <item>
-<p>external encoding information, if available, otherwise</p>
+<p>If external (out-of-band) information supplies encoding
+information, it is used.</p>
 </item>
 <item>
-<p>if the media type of the resource indicates,
-according to XML Media Types <bibref ref="RFC3023"/>, that the
-resource is XML, for example <code>text/xml</code> or
-<code>application/xml</code> or matches
-<code>text/*+xml</code> or <code>application/*+xml</code>, then the
-encoding is determined as specified in <bibref ref="XML"/> or
-<bibref ref="XML11"/> section 4.3.3, as appropriate, otherwise</p>
-</item>
+<p>Otherwise, by cases, depending on whether,
+and if so what, MIME information is available:</p>
+<ulist>
 <item>
-<p>the value of the <att>encoding</att> attribute if one
-exists, otherwise</p>
-</item>
+<p>For XML MIME entities:</p>
+<ulist>
 <item>
-<p>UTF-8.</p>
+<p>follow the guidelines given in section 3.2 of <bibref ref="RFC7303"/> or its
+successors;</p>
 </item>
 </ulist>
+</item>
+<item>
+<p>For MIME entities which are not XML MIME entities:</p>
+<ulist>
+<item>
+<p>As determined by a BOM (see Section 3.3 of <bibref ref="RFC7303"/>) if it is
+present;</p>
+</item>
+<item>
+<p>In the absence of a BOM (Section 3.3), as determined by the charset
+parameter if it is present.</p>
+</item>
+<item>
+<p>In the absence of a charset parameter, the value of the
+<att>encoding</att> attribute, if it exists.</p>
+</item>
+<item>
+<p>Otherwise, UTF-8</p>
+</item>
+</ulist>
+</item>
+<item>
+<p>For non-MIME entities:</p>
+<ulist>
+<item>
+<p>If external (out-of-band) information identifies them as XML, then
+according to section 4.3.3 of <bibref ref="XML"/>;</p>
+</item>
+<item>
+<p>If it is not identified as XML, the value of the
+<att>encoding</att> attribute, if it exists.</p>
+</item>
+<item>
+<p>Otherwise, UTF-8.</p>
+</item>
+</ulist>
+</item>
+</ulist>
+</item>
+</ulist>
+
 <p>Byte sequences outside the range allowed by the encoding are a
 <termref def="dt-error">fatal error</termref>.  Characters that are not
 permitted in XML documents also are a
@@ -1634,10 +1674,6 @@ Task Force, 1995.</bibl>
 <titleref href="http://www.ietf.org/rfc/rfc2732.txt">RFC 2732:
 Format for Literal IPv6 Addresses in URL's</titleref>.
 Internet Engineering Task Force, 1999.</bibl>
-<bibl id="RFC3023" key="IETF RFC 3023" href="http://www.ietf.org/rfc/rfc3023.txt">
-<titleref href="http://www.ietf.org/rfc/rfc3023.txt">RFC 3023:
-XML Media Types</titleref>.
-Internet Engineering Task Force, 2001.</bibl>
 <bibl id="RFC3987" key="IETF RFC 3987" href="http://www.ietf.org/rfc/rfc3987.txt">
 <titleref href="http://www.ietf.org/rfc/rfc3987.txt">RFC 3987:
 Internationalized Resource Identifiers (IRIs)</titleref>.
@@ -1650,6 +1686,10 @@ Internet Engineering Task Force, 2005.</bibl>
 <titleref href="http://www.ietf.org/rfc/rfc5147.txt">RFC 5147:
 URI Fragment Identifiers for the text/plain Media Type</titleref>.
 Internet Engineering Task Force, 2008.</bibl>
+<bibl id="RFC7303" key="IETF RFC 7303" href="http://www.ietf.org/rfc/rfc7303.txt">
+<titleref href="http://www.ietf.org/rfc/rfc7303.txt">RFC 7303:
+XML Media Types</titleref>.
+Internet Engineering Task Force, 2014.</bibl>
 <bibl id="Unicode" key="Unicode">The Unicode Consortium.
 <titleref href="http://www.unicode.org/unicode/standard/versions/">The
 Unicode Standard, Version 4.0.</titleref> Reading, Mass.: Addison-Wesley,
