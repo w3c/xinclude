@@ -1,6 +1,7 @@
 language: java
-install: /bin/true
+install: .travis/get-delta.sh
 script: gradle dist
+after_script: .travis/rm-delta.sh
 sudu: false
 env:
   global:
