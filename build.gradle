@@ -1,3 +1,5 @@
+defaultTasks 'dist'
+
 buildscript {
   repositories {
     mavenCentral()
@@ -140,11 +142,7 @@ task diffcr(dependsOn: ['spec'], type: Exec) {
               "build/index.html", "build/diffcr.html"
 }
 
-task allspec(dependsOn: ['spec', 'diff10', 'diffcr']) {
-  // nothing to see here
-}
-
-task dist(dependsOn: allspec) {
+task dist(dependsOn: ['spec', 'diff10', 'diffcr']) {
   // nothing to see here
 }
 
