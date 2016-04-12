@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This doesn't really belong here, but...
+sudo apt-get install tidy
+
 if [ "$DELTA_BASE" != "" ] && [ "$DELTA_NAME" != "" ] && [ "DELTA_PASS" != "" ]
 then
     rm -rf delta
