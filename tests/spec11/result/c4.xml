@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<price-quote xmlns:xi="http://www.w3.org/2001/XInclude">
+  <prepared-for>Joe Smith</prepared-for>
+  <good-through>20040930</good-through>
+  <description id="w002-description" xml:lang="en-us"
+               xml:base="http://www.example.com/price-list.xml">
+    <p>Super-sized widget with bells <i>and</i> whistles.</p>
+  </description>
+  <volume>40</volume>
+  <price currency="USD" volume="10+" xml:lang="en-us"
+         xml:base="http://www.example.com/price-list.xml">54.95</price>
+</price-quote>

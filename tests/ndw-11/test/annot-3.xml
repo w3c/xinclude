@@ -1,0 +1,6 @@
+<book xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:ex="http://example.com/">
+<chapter xml:id="inline1"/>
+<xi:include href="chap1.xml" ex:root="true" set-xml-id="newid"/>
+<chapter xml:id="inline2"/>
+</book>

@@ -1,0 +1,9 @@
+<?xml version='1.0'?>
+<document xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:eg="http://example.org/namespace/example">
+<p>This example demonstrates not copying attributes from the xml:
+namespace.</p>
+
+<para xml:id="def" xml:base="src.xml">Some definition.</para>
+
+</document>

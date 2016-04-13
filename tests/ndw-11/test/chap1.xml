@@ -1,0 +1,5 @@
+<chapter xml:id="chap" ex:alt="file"
+         xmlns:ex="http://example.com/">
+<title>Chapter Title</title>
+<para>Chapter content.</para>
+</chapter>

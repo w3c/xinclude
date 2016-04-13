@@ -1,0 +1,5 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xmlns:ex="http://example.com/">
+<pre><xi:include href="chap1.xml" fragid="char=570,696" parse="text"/></pre>
+</div>

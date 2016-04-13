@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+<document xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:eg="http://example.org/namespace/example">
+<p>In this case, the xml:id is copied to all top-level elements.</p>
+
+<para xml:id="anid" xml:base="src.xml">Some paragraph.</para><para xml:id="anid" xml:base="src.xml">Some definition.</para><para xml:id="anid" xml:base="src.xml">Some other paragraph.</para>
+
+</document>

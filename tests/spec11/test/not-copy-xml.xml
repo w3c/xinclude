@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<document xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:eg="http://example.org/namespace/example">
+<p>This example demonstrates not copying attributes from the xml:
+namespace.</p>
+
+<xi:include xml:id="xinclude-element" xml:lang="us-EN"
+            href="src.xml" xpointer="element(def)"/>
+
+</document>

@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+<price-quote xmlns:xi="http://www.w3.org/2001/XInclude">
+  <prepared-for>Joe Smith</prepared-for>
+  <good-through>20040930</good-through>
+  <xi:include href="price-list.xml" xpointer="w002-description"/>
+  <volume>40</volume>
+  <xi:include href="price-list.xml" xpointer="element(w002-prices/2)"/>
+</price-quote>

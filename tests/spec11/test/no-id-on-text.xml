@@ -1,0 +1,7 @@
+<?xml version='1.0'?>
+<div>
+  <xi:include href="code.pl" parse="text" set-xml-id="idvalue"
+              xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:fallback><p>Fallback doesn’t apply; this is a fatal error.</p></xi:fallback>
+  </xi:include>
+</div>

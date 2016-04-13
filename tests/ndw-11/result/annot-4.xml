@@ -1,0 +1,11 @@
+<book xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+      xmlns:ex="http://example.com/">
+<chapter xml:id="inline1"/>
+<chapter xml:id="chap" ex:alt="file" ex:root="true" class="some-class"
+         xmlns:ex="http://example.com/">
+<title>Chapter Title</title>
+<para>Chapter content.</para>
+</chapter>
+<chapter xml:id="inline2"/>
+</book>

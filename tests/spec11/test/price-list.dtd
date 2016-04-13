@@ -1,0 +1,6 @@
+<!ATTLIST item
+          id	ID	#IMPLIED
+>
+<!ATTLIST prices
+          id	ID	#IMPLIED
+>
