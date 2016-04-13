@@ -1103,7 +1103,7 @@ parameter if it is present.</p>
 </item>
 <item>
 <p>In the absence of a charset parameter, the value of the
-<att>encoding</att> attribute, if it exists.</p>
+<att>encoding</att> attribute on the <el>xi:include</el> element, if it exists.</p>
 </item>
 <item>
 <p>Otherwise, UTF-8</p>
@@ -1119,7 +1119,7 @@ according to section 4.3.3 of <bibref ref="XML"/>;</p>
 </item>
 <item>
 <p>If it is not identified as XML, the value of the
-<att>encoding</att> attribute, if it exists.</p>
+<att>encoding</att> attribute on the <el>xi:include</el> element, if it exists.</p>
 </item>
 <item>
 <p>Otherwise, UTF-8.</p>
