@@ -2168,6 +2168,30 @@ as that of the following document:</p>
   <a href="mailto:bob@example.org">Report error</a>
 </div>]]></eg>
 </div2>
+
+<div2 id="text-encoding-example">
+<head>Textual Inclusion Encoding Example</head>
+<p>The following XML document specifies the encoding of the included
+text document. See <specref ref="text-included-items"/>.</p>
+<eg>&lt;?xml version='1.0'?&gt;
+&lt;document xmlns:xi="http://www.w3.org/2001/XInclude"&gt;
+  &lt;p&gt;This document is about
+  &lt;xi:include href="city.txt" parse="text/plain" encoding="ISO-8859-1"/&gt;.&lt;/p&gt;
+&lt;/document&gt;</eg>
+<p>where city.txt contains:</p>
+<eg><![CDATA[München]]></eg>
+<p>(Encoded in ISO-8859-1, of course.)</p>
+<p>The infoset resulting from resolving inclusions on this document
+is the same (except for the <emph role="infoset-property">include history</emph>
+and <emph role="infoset-property">language</emph> properties)
+as that of the following document:</p>
+<eg><![CDATA[<?xml version='1.0'?>
+<document xmlns:xi="http://www.w3.org/2001/XInclude">
+  <p>This document is about
+  München.</p>
+</document>]]></eg>
+</div2>
+
 </inform-div1>
 </back>
 </spec>
