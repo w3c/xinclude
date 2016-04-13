@@ -105,7 +105,6 @@
       <output>../../../result/XInclude/include2.xml</output>
     </testcase>
 
-
     <testcase id="FourThought-include-03" href="ft-include3.xml" type="success">
       <contributor>John Evdemon</contributor>
       <section resource="http://www.w3.org/TR/xinclude/#syntax">3.1</section>
@@ -230,7 +229,6 @@
       This content must be ignored. </description>
       <output>../../result/nist-include-10.xml</output>
     </testcase>
-
 
     <testcase id="Nist-include-11" href="nist-include-11.xml" type="error">
       <contributor>Sandra I. Martinez</contributor>
@@ -750,7 +748,6 @@
       <output>../result/langtest3.xml</output>
     </testcase>
 
-
     <testcase id="harold-10" href="marshtestwithxmlbase.xml" type="success">
       <contributor>Elliotte Rusty Harold</contributor>
       <section resource="http://www.w3.org/TR/xinclude/#include-location">4.1</section>
@@ -761,7 +758,6 @@
       <output>../result/marshtestwithxmlbase.xml</output>
     </testcase>
 
-
     <testcase id="harold-11" href="marshtestwithxmlbaseandemptyhref.xml" type="success">
       <contributor>Elliotte Rusty Harold</contributor>
       <section resource="http://www.w3.org/TR/xinclude/#include_element">3.1</section>
@@ -769,7 +765,6 @@
       <description>There's no difference between href="" and no href attribute.</description>
       <output>../result/marshtestwithxmlbase.xml</output>
     </testcase>
-
 
     <testcase id="harold-12" href="includefromsamedocumentwithbase.xml" type="success">
       <contributor>Elliotte Rusty Harold</contributor>
@@ -869,7 +864,6 @@
       <date qualifier="created">31-Aug-2004</date>
       <description>A fallback element in an included document contains an include element with neither an xpointer nor an href attribute.</description>
     </testcase>
-
 
     <testcase id="harold-25" href="metafallbacktestwithfragmentid.xml" type="error">
       <contributor>Elliotte Rusty Harold</contributor>
@@ -1530,6 +1524,114 @@ content negotiation</description>
       <description>RFC 5147 text parsing.
       </description>
       <output>../result/text-2.xml</output>
+    </testcase>
+  </testcases>
+
+  <testcases creator="Norman Walsh" basedir="spec11/test">
+    <testcase id="spec11-bad-parse" href="bad-parse.xml" type="success" features="xinclude11">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/#include_element">3.1</section>
+      <date qualifier="created">2016-03-29</date>
+      <description>A bad parse value is a recoverable error.
+      </description>
+      <output>../result/bad-parse.xml</output>
+    </testcase>
+    <testcase id="spec11-c1" href="c1.xml" type="success">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/#basic-example">C.1</section>
+      <date qualifier="created">2016-03-29</date>
+      <description>Example C.1.
+      </description>
+      <output>../result/c1.xml</output>
+    </testcase>
+    <testcase id="spec11-c2" href="c2.xml" type="success">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/#text-example">C.2</section>
+      <date qualifier="created">2016-03-29</date>
+      <description>Example C.2.
+      </description>
+      <output>../result/c2.xml</output>
+    </testcase>
+    <testcase id="spec11-c3" href="c3.xml" type="success">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/#xml-as-text-example">C.3</section>
+      <date qualifier="created">2016-03-29</date>
+      <description>Example C.3.
+      </description>
+      <output>../result/c3.xml</output>
+    </testcase>
+    <testcase id="spec11-c4" href="c4.xml" type="success">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/#fragment-example">C.4</section>
+      <date qualifier="created">2016-03-29</date>
+      <description>Example C.4.
+      </description>
+      <output>../result/c4.xml</output>
+    </testcase>
+    <testcase id="spec11-c6-b" href="c6-b.xml" type="success" features="xinclude11 rfc5147">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/#text-example-2">C.6</section>
+      <date qualifier="created">2016-03-29</date>
+      <description>Example C.6 (b).
+      </description>
+      <output>../result/c6-b.xml</output>
+    </testcase>
+    <testcase id="spec11-c6" href="c6.xml" type="success" features="xinclude11 rfc5147">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/#text-example-2">C.6</section>
+      <date qualifier="created">2016-03-29</date>
+      <description>Example C.6 (a).
+      </description>
+      <output>../result/c6.xml</output>
+    </testcase>
+    <testcase id="spec11-c7-b" href="c7-b.xml" type="success" features="xinclude11">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/#att-copy-example">C.7</section>
+      <date qualifier="created">2016-03-29</date>
+      <description>Example C.7 (b).
+      </description>
+      <output>../result/c7-b.xml</output>
+    </testcase>
+    <testcase id="spec11-c7" href="c7.xml" type="success" features="xinclude11">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/#att-copy-example">C.7</section>
+      <date qualifier="created">2016-03-29</date>
+      <description>Example C.7 (a).
+      </description>
+      <output>../result/c7.xml</output>
+    </testcase>
+    <testcase id="spec11-c8" href="c8.xml" type="success">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/#fallback-example">C.8</section>
+      <date qualifier="created">2016-03-29</date>
+      <description>Example C.8.
+      </description>
+      <output>../result/c8.xml</output>
+    </testcase>
+    <testcase id="spec11-multi-id" href="multi-id.xml" type="success" features="xinclude11">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/#include_element">3.1</section>
+      <date qualifier="created">2016-03-29</date>
+      <description>The set-xml-id attribute applies to all top-level included elements.
+      </description>
+      <output>../result/multi-id.xml</output>
+    </testcase>
+    <testcase id="spec11-no-id-on-text" href="no-id-on-text.xml" type="error"
+              features="xinclude11">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/"></section>
+      <date qualifier="created">2016-03-29</date>
+      <description>It’s a fatal error to use set-xml-id when parse=“text”.
+      </description>
+    </testcase>
+    <testcase id="spec11-not-copy-xml" href="not-copy-xml.xml" type="success"
+              features="xinclude11">
+      <contributor>Norman Walsh</contributor>
+      <section resource="https://www.w3.org/TR/xinclude-11/#include_element">3.1</section>
+      <date qualifier="created">2016-03-29</date>
+      <description>Attributes in the xml: namespace are not copied.
+      </description>
+      <output>../result/not-copy-xml.xml</output>
     </testcase>
   </testcases>
 </testsuite>
