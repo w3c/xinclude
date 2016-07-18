@@ -4,14 +4,14 @@
 <!DOCTYPE spec PUBLIC "-//W3C//DTD Specification V2.10//EN"
  "xmlspec.dtd" [
 <!ENTITY year "2016">
-<!ENTITY month "April">
-<!ENTITY MM "04">
-<!ENTITY day "12">
-<!ENTITY DD "12">
+<!ENTITY month "July">
+<!ENTITY MM "07">
+<!ENTITY day "18">
+<!ENTITY DD "18">
 <!ENTITY MMDD "&MM;&DD;">
-<!ENTITY status "WD">
-<!ENTITY status-lc "wd">
-<!ENTITY status-words "Working Draft">
+<!ENTITY status "NOTE">
+<!ENTITY status-lc "note">
+<!ENTITY status-words "Note">
 <!ENTITY includensuri "http://www.w3.org/2001/XInclude">
 <!ENTITY attrnsuri "http://www.w3.org/2001/XInclude/local-attributes">
 <!ENTITY XMLCore-IPR "http://www.w3.org/2002/08/xmlcore-IPR-statements">
