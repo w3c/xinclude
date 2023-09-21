@@ -1,5 +1,5 @@
 {
     "group":      ["18796"],
     "contacts":   ["liamquin", "ndw"],
-    "shortName":  "xml-core"
+    "repo-type": ["rec-track", "tests"]
 }
